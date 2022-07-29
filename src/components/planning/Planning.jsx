@@ -10,20 +10,26 @@ const Planning = ({ heading, subHeading, formData, setFormData, children }) => {
       </div>
 
       <div className="form-input-wrapper ">
-        <label className="input-label " style={{ marginBottom: "12px" }}>
+        <label className="input-label mb-4">
           Workspace Name
           <input
             type="text"
             value={formData.workspaceName}
             onChange={(e) =>
-              setFormData((prev) => ({ ...prev, workspaceName: e.target.value }))
+              setFormData((prev) => ({
+                ...prev,
+                workspaceName: e.target.value,
+              }))
             }
             placeholder="Eden"
             className="input-text"
           />
         </label>
         <div className="input-label__wrapper relative">
-          <label className="input-label absolute" style={{ left: "5px" }}>
+          <label
+            className="input-label absolute left-5"
+            
+          >
             Workspace URL
             <span className="text-grey-400" htmlFor="workspaceUrl">
               (optional)
@@ -38,7 +44,10 @@ const Planning = ({ heading, subHeading, formData, setFormData, children }) => {
               type="url"
               value={formData.workspaceUrl}
               onChange={(e) =>
-                setFormData((prev) => ({ ...prev, workspaceUrl: e.target.value }))
+                setFormData((prev) => ({
+                  ...prev,
+                  workspaceUrl: e.target.value,
+                }))
               }
               placeholder="Steve"
               className="input-text w-60"
