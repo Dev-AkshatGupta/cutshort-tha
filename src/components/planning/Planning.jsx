@@ -14,7 +14,7 @@ const Planning = ({ heading, subHeading, formData, setFormData, children }) => {
           Workspace Name
           <input
             type="text"
-            value={formData["workspaceName"]}
+            value={formData.workspaceName}
             onChange={(e) =>
               setFormData((prev) => ({ ...prev, workspaceName: e.target.value }))
             }
@@ -36,7 +36,7 @@ const Planning = ({ heading, subHeading, formData, setFormData, children }) => {
             <input
               id="workspaceUrl"
               type="url"
-              value={formData["workspaceUrl"]}
+              value={formData.workspaceUrl}
               onChange={(e) =>
                 setFormData((prev) => ({ ...prev, workspaceUrl: e.target.value }))
               }
