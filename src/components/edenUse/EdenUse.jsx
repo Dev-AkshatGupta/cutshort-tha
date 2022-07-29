@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./edenUse.css";
-const EdenUse = ({ heading, subHeading }) => {
+const EdenUse = ({ heading, subHeading,formData,setFormData,children }) => {
   const [select, setSelect] = useState({
     myself: true,
     team: false,
@@ -21,6 +21,10 @@ const EdenUse = ({ heading, subHeading }) => {
             }
             onClick={() => {
               setSelect((prev) => ({ myself: !prev.myself, team: !prev.team }));
+                setFormData((prev) => ({
+                  ...prev,
+                  plan: "MYSELF",
+                }));
             }}
           >
             {select.myself ? (
@@ -77,6 +81,10 @@ const EdenUse = ({ heading, subHeading }) => {
             }
             onClick={() => {
               setSelect((prev) => ({ myself: !prev.myself, team: !prev.team }));
+               setFormData((prev) => ({
+                 ...prev,
+                 plan: "MYTEAM",
+               }));
             }}
           >
             {select.team ? (
@@ -168,7 +176,7 @@ const EdenUse = ({ heading, subHeading }) => {
             </p>
           </div>
         </div>
-        <button className="form-button">Create Workspace</button>
+        {children}
       </div>
     </>
   );

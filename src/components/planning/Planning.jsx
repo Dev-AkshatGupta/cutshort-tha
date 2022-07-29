@@ -1,6 +1,6 @@
 import React from 'react'
 import "./planning.css";
-const Planning = ({ heading, subHeading }) => {
+const Planning = ({ heading, subHeading, formData, setFormData, children }) => {
   return (
     <>
       <div className="mb-3">
@@ -9,45 +9,43 @@ const Planning = ({ heading, subHeading }) => {
         <p className=" text-netural-500 ">{subHeading}</p>
       </div>
 
-      <div className="form-input-wrapper">
-        <label className="input-label">
+      <div className="form-input-wrapper ">
+        <label className="input-label " style={{ marginBottom: "12px" }}>
           Workspace Name
           <input
             type="text"
-            //   value={state[value]}
-            //   onChange={(e) =>
-            //     setState((prev) => ({ ...prev, [value]: e.target.value }))
-            //   }
+            value={formData["workspaceName"]}
+            onChange={(e) =>
+              setFormData((prev) => ({ ...prev, workspaceName: e.target.value }))
+            }
             placeholder="Eden"
             className="input-text"
           />
         </label>
-        <div className="input-label__wrapper">
-          <label className="input-label" style={{ textAlign: "left" }}>
+        <div className="input-label__wrapper relative">
+          <label className="input-label absolute" style={{ left: "5px" }}>
             Workspace URL
             <span className="text-grey-400" htmlFor="workspaceUrl">
               (optional)
             </span>
           </label>
           <p className="w-100">
-            <span className="input-text text-grey-400 w-40 pb-3 bg-c-slate-50">
+            <span className="input-text text-grey-400 w-40 pb-3 bg-c-slate-50 p-2">
               www.eden.com/
             </span>
-            {/* <span> */}
             <input
               id="workspaceUrl"
               type="url"
-              //   value={state[value]}
-              //   onChange={(e) =>
-              //     setState((prev) => ({ ...prev, [value]: e.target.value }))
-              //   }
+              value={formData["workspaceUrl"]}
+              onChange={(e) =>
+                setFormData((prev) => ({ ...prev, workspaceUrl: e.target.value }))
+              }
               placeholder="Steve"
               className="input-text w-60"
             />
-            {/* </span> */}
           </p>
         </div>
-        <button className="form-button">Create Workspace</button>
+        {children}
       </div>
     </>
   );

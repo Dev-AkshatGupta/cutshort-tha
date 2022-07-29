@@ -77,3 +77,15 @@ background-color: var(--SLATE-50);
 .mb-3{
   	margin-bottom: 0.75rem;
 }
+.bg-c-indigo-600{
+  background: var(--INDIGO-600);
+}
+.p-2{
+  padding: 0.6rem;
+}
+.relative{
+position:relative;
+}
+.absolute{
+  position:absolute;
+}
