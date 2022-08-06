@@ -23,7 +23,7 @@ const SignUpInfo = ({
             type="text"
               value={formData.fullName}
               onChange={(e) =>
-                setFormData((prev) => ({ ...formData, fullName:e.target.value}))
+                setFormData((prev) => ({ ...prev, fullName:e.target.value}))
               }
             placeholder="Steve Jobs"
             className="input-text"

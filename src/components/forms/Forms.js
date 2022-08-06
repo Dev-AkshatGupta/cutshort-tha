@@ -33,7 +33,9 @@ const Forms = () => {
   return (
     <div className="form-hero__wrapper">
       <section className="form-hero__content">
-        <h1 className="align-center text-3xl text-grey-800 m-1 ">Eden</h1>
+        <h1 className="align-center text-3xl text-grey-800 m-1 ">
+          <img src={require("./../../assets/logoEden.png")} alt="eden logo"></img>
+          Eden</h1>
       </section>
       <section className="horizontal-stepper__wrapper">
         <span
@@ -78,11 +80,11 @@ const Forms = () => {
             style={{
               width:
                 page === 0
-                  ? "25%"
+                  ? "20%"
                   : page === 1
                   ? "50%"
                   : page === 2
-                  ? "75%"
+                  ? "80%"
                   : "100%",
               backgroundColor: "#4f46e5",
             }}
