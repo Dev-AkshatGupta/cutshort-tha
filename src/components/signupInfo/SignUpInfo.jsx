@@ -41,7 +41,7 @@ const SignUpInfo = ({
             className="input-text"
           />
         </label>
-        {children}
+      <div className="sign-up__btn">  {children}</div>
       </div>
     </>
   );
